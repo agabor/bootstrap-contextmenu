@@ -46,12 +46,13 @@
 
 			this.closemenu();
 
-			if (this.before.call(this,e,$(e.currentTarget)) === false) return;
-
 			$menu = this.getMenu();
 			$menu.trigger(evt = $.Event('show.bs.context', relatedTarget));
 
 			tp = this.getPosition(e, $menu);
+
+			if (this.before.call(this,e,$(e.currentTarget)) === false) return;
+
 			items = 'li:not(.divider)';
 			$menu.attr('style', '')
 				.css(tp)
